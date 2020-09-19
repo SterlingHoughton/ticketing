@@ -12,7 +12,7 @@ gcloud auth login --update-adc
 To view the current context for kubectl, run the following command:
 --kubectl config current-context
 
-To view the current context for kubectl, run the following command:
+To view all contexs for kubectl, run the following command:
 --kubectl config get-contexts
 
 After your clusters, users, and contexts are defined in one or more configuration files, you can quickly switch between clusters by using the
@@ -23,7 +23,6 @@ To view your environment's kubeconfig, run the following command:
 
 Configure Access to Multiple Clusters
 https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
-
 
 https://skaffold.dev/
 
