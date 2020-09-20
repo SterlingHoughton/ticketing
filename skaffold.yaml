@@ -11,9 +11,12 @@ build:
     projectId: ticketing-dev-290003
   artifacts:
     - image: us.gcr.io/ticketing-dev-290003/auth
-      context: auth
-      docker:
+      kaniko:
         dockerfile: Dockerfile
+        cache: {}
+      context: auth
+      # docker:
+      #   dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.ts'

@@ -26,5 +26,14 @@ https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-mul
 
 https://skaffold.dev/
 
+https://skaffold.dev/docs/references/yaml/
+
+https://github.com/GoogleContainerTools/skaffold/tree/master/examples
+
+https://github.com/GoogleContainerTools/kaniko
+
+https://cloud.google.com/cloud-build/docs/kaniko-cache
+
 https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke
 
+https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
