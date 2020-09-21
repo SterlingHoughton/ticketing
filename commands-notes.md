@@ -37,3 +37,8 @@ https://cloud.google.com/cloud-build/docs/kaniko-cache
 https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke
 
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
+
+List all secrets:
+kubectl get secrets
