@@ -5,13 +5,18 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: ticketing-dev-290003
   artifacts:
-    - image: sahoughton/auth
+    - image: us.gcr.io/ticketing-dev-290003/auth
+      kaniko:
+        dockerfile: Dockerfile
+        cache: {}
       context: auth
-      docker:
-        dockerfile: dockerfile
+      # docker:
+      #   dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.ts'
