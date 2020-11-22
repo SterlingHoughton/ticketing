@@ -42,3 +42,6 @@ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
 
 List all secrets:
 kubectl get secrets
+
+NEXT JS
+https://nextjs.org/docs/advanced-features/codemods#name-default-component -> currently getting yelled at for not having named components / functions (arrow functions)
