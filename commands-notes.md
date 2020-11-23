@@ -45,3 +45,5 @@ kubectl get secrets
 
 NEXT JS
 https://nextjs.org/docs/advanced-features/codemods#name-default-component -> currently getting yelled at for not having named components / functions (arrow functions)
+
+https://github.com/vercel/next.js/blob/master/errors/css-global.md - Global CSS 
