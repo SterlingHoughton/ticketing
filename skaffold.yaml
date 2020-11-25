@@ -21,3 +21,12 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: us.gcr.io/ticketing-dev-290003/client
+      kaniko:
+        dockerfile: Dockerfile
+        cache: {}
+      context: client
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
