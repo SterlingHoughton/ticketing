@@ -9,13 +9,13 @@ interface UserAttrs {
 }
 
 // An interface that describes the properties
-// that a User Model has
+// that a User Model has - the entire collection of data
 interface UserModel extends mongoose.Model<UserDoc> {
   build(attrs: UserAttrs): UserDoc;
 }
 
 // An interface that describes the properties 
-// that a User Document has
+// that a User Document has - single document / single record
 interface UserDoc extends mongoose.Document {
   email: string;
   password: string;
@@ -49,7 +49,8 @@ userSchema.pre('save', async function(done) {
   done();
 });
 
-// static property to build new User documents
+// static property to build new User documents. This allows TS to validate or type checking
+// on the properties we're creating on a new record. 
 userSchema.statics.build = (attrs: UserAttrs) => {
   return new User(attrs);
 };
