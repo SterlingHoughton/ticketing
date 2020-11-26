@@ -8,7 +8,7 @@ import { app } from '../app';
 declare global {
   namespace NodeJS {
     interface Global {
-      authSignup(): Promise<string[]>
+      signup(): Promise<string[]>
     }
   }
 }
@@ -40,7 +40,7 @@ afterAll(async () => {
   await mongoose.connection.close();
 });
 
-global.authSignup = async () => {
+global.signup = async () => {
   const email = 'test@test.com';
   const password = 'password';
 
