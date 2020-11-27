@@ -1,10 +1,8 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import request from 'supertest';
-import { app } from '../app';
 import jwt from 'jsonwebtoken';
 
-// tell TS that there is a global property called authSignup - which is a function that returns a promise
+// tell TS that there is a global property called signin - which is a function that returns a promise
 // that will resolve with a value of type array of string
 declare global {
   namespace NodeJS {
@@ -13,7 +11,6 @@ declare global {
     }
   }
 }
-
 
 let mongo: any;
 beforeAll(async () => {
