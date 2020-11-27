@@ -4,6 +4,7 @@ import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 import { errorHandler, NotFoundError, currentUser } from '@sahtickets/common';
 import { createTicketRouter } from './routes/new';
+import { showTicketRouter } from './routes/show';
 
 const app = express();
 // Traffic is being proxied via ingress-nginx
@@ -19,6 +20,7 @@ app.use(
 app.use(currentUser)
 
 app.use(createTicketRouter);
+app.use(showTicketRouter);
 
 app.all('*', async (req, res) => {
   throw new NotFoundError();
