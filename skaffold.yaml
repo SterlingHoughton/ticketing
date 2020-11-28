@@ -30,3 +30,12 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
+    - image: us.gcr.io/ticketing-dev-290003/tickets
+      kaniko:
+        dockerfile: Dockerfile
+        cache: {}
+      context: tickets
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
