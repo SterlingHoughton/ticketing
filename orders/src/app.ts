@@ -4,6 +4,12 @@ import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 import { errorHandler, NotFoundError, currentUser } from '@sahtickets/common';
 
+// ORDER ROUTES
+import { createOrderRouter } from './routes/new';
+import { showOrderRouter } from './routes/show';
+import { indexOrderRouter } from './routes/index';
+import { deleteOrderRouter } from './routes/delete';
+
 const app = express();
 // Traffic is being proxied via ingress-nginx
 app.set('trust proxy', true);
@@ -16,6 +22,11 @@ app.use(
 );
 
 app.use(currentUser)
+
+app.use(createOrderRouter);
+app.use(showOrderRouter);
+app.use(indexOrderRouter);
+app.use(deleteOrderRouter);
 
 app.all('*', async (req, res) => {
   throw new NotFoundError();
