@@ -22,13 +22,13 @@ router.post(
   validateRequest,
   async (req: Request, res: Response) => {
     const { ticketId } = req.body;
+    
     // Find the ticket the user is trying to order in the database
     const ticket = await Ticket.findById(ticketId);
     if (!ticket) {
       throw new NotFoundError();
     }
     // Make sure that this ticket isn't already reserved
-    
     const isReserved = await ticket.isReserved();
     if (isReserved) {
       throw new BadRequestError('This ticket has already been reserved');
