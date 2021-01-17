@@ -26,12 +26,12 @@ const orderSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true,
-    enum: Object.values(OrderStatus),
-    default: OrderStatus.Created
   },
   status: {
     type: String,
-    required: true
+    required: true,
+    enum: Object.values(OrderStatus),
+    default: OrderStatus.Created
   },
   expiresAt: {
     type: mongoose.Schema.Types.Date
